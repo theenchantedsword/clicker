@@ -1,0 +1,43 @@
+{
+  "b6": {
+    "name": "Booster 6",
+    "boostAmount": 50,
+    "origin": "Vanilla Expansion, An official mod",
+    "description": "A basic booster, boosts clicks gained per click by fifty.",
+    "cost": 250000,
+    "owned": 0
+  },
+  "b7": {
+    "name": "Booster 7",
+    "boostAmount": 75,
+    "origin": "Vanilla Expansion, An official mod",
+    "description": "A basic booster, boosts clicks gained per click by seventy-five.",
+    "cost": 1000000,
+    "owned": 0
+  },
+  "cheatBoost": {
+    "name": "Cheat Booster",
+    "boostAmount": 500,
+    "origin": "Vanilla Expansion, An official mod",
+    "description": "This is not a basic booster, but rather a cheat booster. how did you get this??",
+    "cost": 0,
+    "owned": 0,
+    "unlockCondition": "(cheatBoosts == true)"
+  },
+  "b8": {
+    "name": "Booster 8",
+    "boostAmount": 110,
+    "origin": "Vanilla Expansion, An official mod",
+    "description": "A basic booster, boosts clicks gained per click by one-hundred and ten.",
+    "cost": 15000000,
+    "owned": 0
+  },
+  "b9": {
+    "name": "Booster 9",
+    "boostAmount": 175,
+    "origin": "Vanilla Expansion, An official mod",
+    "description": "A basic booster, boosts clicks gained per click by one-hundred and ten.",
+    "cost": 140000000,
+    "owned": 0
+  }
+}

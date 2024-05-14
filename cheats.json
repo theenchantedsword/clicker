@@ -1,0 +1,10 @@
+{
+  "cheat": {
+    "name": "Cheat boost",
+    "boostAmount": 1000000000,
+    "origin": "Cheats, an official mod",
+    "description": "A cheat booster... why are you cheating??",
+    "cost": -100,
+    "owned": 0
+  }
+}

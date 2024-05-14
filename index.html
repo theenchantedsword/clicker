@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <p id="clickCounter">Clicks: 0</p>
+  <div id="boosters" class="unselectable"></div>
+  <p onClick="clicks = { value: (window.localStorage.getItem('mods')) ? (clicks + (totalBoosts + modTotal + 1) * (rebirths + 1)) : (clicks + (totalBoosts + 1) * (rebirths + 1)), code: code}; updateClicks(); unlock();" id="clicker" class="unselectable" id="clicker">Click Here!</p>
+  <p class="unselectable" onclick="save()">Save</p>
+  <p class="unselectable" onclick="load()">Load</p>
+  <p class="unselectable" onclick="reset()">Reset</p>
+  <p class="unselectable" id="rebirth" onclick="rebirth()">Rebirth</p>
+  <div id="modStuff" class="unselectable">
+    <textarea id="modInput" placeholder="Enter mod link (!!MUST BE A .json FILE!!)"></textarea>
+    <button onclick="mods.splice(mods.indexOf(document.getElementById('modInput').value), 1);">Remove mod</button>
+    <button onclick="addMods(document.getElementById('modInput').value);">Add mod</button>
+  </div>
+  <div class="unselectable" id="data"></div>
+  
+  <div id="acheivements">
+    <button onclick="switchDivs()">Switch to autoclickers</button>
+    <br>
+    <p class="not_acheived unselectable" id="millionaire">Millionaire</p>
+    <p class="not_acheived unselectable" id="billionaire">Billionaire</p>
+    <p class="not_acheived unselectable" id="trillionaire">Trillioniare</p>
+  </div>
+  <!--<script>
+    let acheivementsElem = document.getElementById("acheivements").innerHTML;
+    let autoclickerDiv = document.createElement("div");
+    function switchDivs(){
+      if(document.getElementById("acheivements").innerHTML == acheivementsElem){
+        let str = "";
+        for(var autoclicker in autoClickers){
+          if(autoClickers[autoclicker].unlocked){
+            /*str += `<div onclick="(clicks > autoClickers['${autoclicker}'].cost) ? clicks -= autoClickers['${autoclicker}'].cost; autoClickers['${autoclicker}'].owned += 1; autoClickers['${autoclicker}'].cost += Math.round(autoClickers['${autoclicker}'].cost * 0.2); updateClicks(); : alert('You dont have enough clicks for that!')">${autoclicker}</div>`; */
+            let div = document.createElement("div");
+            div.id = autoclicker;
+            div.onclick = function(){
+              let clicker = autoClickers[this.id];
+              if(clicks > clicker.cost){
+                autoClickers[this.id].cost += Math.round(clicker.cost * 0.2);
+                autoClickers[this.id].cost += Math.round(autoClickers[this.id].cost * 0.2);
+                autoClickers[this.id].owned += 1;
+                clicks -= clicker.cost;
+                updateClicks();
+                div.textContent = `${this.id} <br> cost: ${autoClickers[this.id].cost} <br> owned: ${autoClickers[this.id].owned} <br> CPS: ${1000 / autoClickers[this.id].interval}`
+                console.log(div)
+                document.getElementById("acheivements").appendChild(div);
+                console.log(div)
+              }
+            }
+          } 
+        }
+      } else {
+        document.getElementById("acheivements").innerHTML = acheivementsElem;
+      }
+    }
+  </script> -->
+  <div id="cheatdiv"></div>
+  <script>
+    document.getElementById("cheatdiv").onclick = function(){
+      setInterval(document.getElementById("clicker").onclick, parseInt(prompt("Enter interval for clicks")) || 10)
+    }
+  </script>
+  <script src="script.js"></script>
+  <script defer>
+    for(var acheivement in acheivementsObj){
+      if(acheivementsObj[acheivement] == true){
+        console.log(acheivement, acheivementsObj)
+          document.getElementById(acheivement).classList.remove("not_acheived");
+      }
+    }
+  </script>
+  
+</body>
+
+</html>
